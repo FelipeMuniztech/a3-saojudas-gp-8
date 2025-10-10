@@ -1,1 +1,0 @@
-# a3-saojudas-gp-8

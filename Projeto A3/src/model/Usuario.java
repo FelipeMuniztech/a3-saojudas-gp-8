@@ -3,29 +3,18 @@ package model;
 public class Usuario {
     private int id;
     private String nome;
-    private String email;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    private int idade;
+    private String tipo;
+    private String senha;
+    public Usuario(int id, String nome, int idade, String tipo, String senha, Boolean ativo) {
         this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
+        this.idade = idade;
+        this.tipo = tipo;
+        this.senha = senha;
+        this.ativo = ativo;
     }
+    private Boolean ativo;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
 }
