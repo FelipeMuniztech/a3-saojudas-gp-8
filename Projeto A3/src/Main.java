@@ -1,9 +1,15 @@
 import view.LoginFrame;
+import java.Sql.Connection
+import java.sql.DriverManager;
 
 public class Main {
     public static void main(String[] args) {
-        javax.swing.SwingUtilities.invokeLater(() -> {
-            new LoginFrame().setVisible(true);
-        });
+try {  Connection conn = DriverManager.getConnection("jdbc:sqlite:meubanco.db");
+            new LoginFrame(conn).setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
+}        
+  
