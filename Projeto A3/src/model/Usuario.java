@@ -14,7 +14,23 @@ public class Usuario {
         this.senha = senha;
         this.ativo = ativo;
     }
-    private Boolean ativo;
+// Getters
+    public int getId() { return id; }
+    public String getNome() { return nome; }
+    public int getIdade() { return idade; }
+    public String getTipo() { return tipo; }
+    public String getSenha() { return senha; }
+    public Boolean getAtivo() { return ativo; }
+
+    // Setters
+    public void setId(int id) { this.id = id; }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setIdade(int idade) { this.idade = idade; }
+    public void setTipo(String tipo) { this.tipo = tipo; }
+    public void setSenha(String senha) { this.senha = senha; }
+    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
+}
 
     
-}
+
+
