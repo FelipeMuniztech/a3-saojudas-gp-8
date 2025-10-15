@@ -5,3 +5,4 @@ public class InteresseUsuario {
     private int usuarioId;
     private String categoria; 
 }
+// opa
