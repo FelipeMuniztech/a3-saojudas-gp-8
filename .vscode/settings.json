@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [
+        "Projeto A3\\src"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\Users\\Dell\\Desktop\\mysql-connector-j-9.5.0\\mysql-connector-j-9.5.0.jar"
+    ]
+}
