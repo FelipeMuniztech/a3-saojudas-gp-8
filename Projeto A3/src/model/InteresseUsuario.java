@@ -1,8 +1,14 @@
 package model;
 
 public class InteresseUsuario {
-    private int id;
     private int usuarioId;
-    private String categoria; 
+    private int categoriaId;
+
+    public InteresseUsuario(int usuarioId, int categoriaId) {
+        this.usuarioId = usuarioId;
+        this.categoriaId = categoriaId;
+    }
+
+    public int getUsuarioId() { return usuarioId; }
+    public int getCategoriaId() { return categoriaId; }
 }
-// opa

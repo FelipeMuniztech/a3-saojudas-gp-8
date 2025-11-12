@@ -2,20 +2,17 @@
 package model;
 
 public enum Interesse {
-    IA ("IA Responsável"),
-    CIBERSEGURANÇA ("Cibersegurança"),
-    PRIVACIDADE ("Privacidade e etica digital");
+    IA_RESPONSAVEL("IA Responsável"),
+    CIBERSEGURANCA("Cibersegurança"),
+    PRIVACIDADE_ETICA("Privacidade & Ética Digital");
 
-    private final String descricao;
+    private String descricao;
 
-    Interesse(String descricao){
+    Interesse(String descricao) {
         this.descricao = descricao;
     }
-    public String getDescricao(){
-        return descricao;
-    }
-    @Override
-    public String toString(){
+
+    public String getDescricao() {
         return descricao;
     }
 }
