@@ -1,5 +1,5 @@
 import view.LoginFrame;
-import java.Sql.Connection
+import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Main {
@@ -11,5 +11,5 @@ try {  Connection conn = DriverManager.getConnection("jdbc:sqlite:meubanco.db");
         }
     }
 }
-}        
+
   

@@ -35,6 +35,32 @@
             return usuarios;
         }
 
+
+        //Buscar por nome
+        //fiz esse metodo pq é oq tinha la na login frame linha 53
+        public Usuario buscarPorNome(String nome) throws SQLException {
+            String sql = "SELECT id, nome, idade, tipo, ativo FROM usuarios WHERE nome = ?";
+
+            try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+                stmt.setString(1, nome);
+                try (ResultSet rs = stmt.executeQuery()) {
+                    if (rs.next()) {
+                        Usuario usuario = new Usuario(
+                                rs.getInt("id"),
+                                rs.getString("nome"),
+                                rs.getInt("idade"),
+                                rs.getString("tipo")
+                        );
+                        usuario.setAtivo(rs.getBoolean("ativo"));
+                        carregarInteressesUsuario(usuario);
+                        return usuario;
+                    }
+                }
+            }
+            return null;
+        }
+
+
         // Buscar por ID
         public Usuario buscarPorId(int id) throws SQLException {
             String sql = "SELECT id, nome, idade, tipo, ativo FROM usuarios WHERE id = ?";

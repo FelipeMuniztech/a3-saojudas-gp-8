@@ -5,16 +5,16 @@ import model.Usuario;
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.SQLException;
-   private Connection conn;
+
 
 public class LoginFrame extends JFrame {
     private JTextField tfUsuario;
     private JPasswordField pfSenha;
     private JButton btnLogin;
-
+    private Connection conn;
     // Aqui a gente vai conectar com as tabelas do banco quando tiver o url
     
-    public LoginFrame() {
+    public LoginFrame(Connection conn) {
         setTitle("Login");
         setSize(300, 150);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,7 +41,7 @@ public class LoginFrame extends JFrame {
         add(btnLogin);
 
         btnLogin.addActionListener(e -> autenticar());
-    }
+
   }
 
 private void autenticar () {
@@ -52,16 +52,22 @@ private void autenticar () {
             UsuarioDAO usuarioDAO = new UsuarioDAO(conn);
             Usuario user = usuarioDAO.buscarPorNome(usuario);
 
-   if (user != null && user.getSenha().equals(senha) && user.getAtivo()) {
+   if (user != null && user.getPassword().equals(senha) && user.isAtivo()) {
                 JOptionPane.showMessageDialog(this, "Login realizado com sucesso!");
                 // Aqui pode abrir a tela principal e fechar a tela de login
                 // new MainFrame(conn).setVisible(true);
                 // this.dispose();
  } else {
-                JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos.", "Erro", JOptionPane.ERROR_MESSAGE);}
+                JOptionPane.showMessageDialog(this,
+                        "Usuário ou senha inválidos.",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);}
      
  } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Erro ao conectar ao banco: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);}
+            JOptionPane.showMessageDialog(this,
+                    "Erro ao conectar ao banco: " + ex.getMessage(),
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);}
     }
 
 }

@@ -8,5 +8,15 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mysql-connector-j-9.4" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.51.0.0-javadoc.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.51.0.0-javadoc.jar!/" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
